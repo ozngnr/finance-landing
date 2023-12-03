@@ -1,0 +1,31 @@
+.btn {
+  display: inline-block;
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: color 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn-text:hover {
+  color: var(--accent-color-light);
+}
+
+.btn-outline {
+  font-weight: 500;
+  padding: 0.375em 1.25em;
+  font-size: 20px;
+  color: var(--accent-color-light);
+  border: 2px solid var(--accent-color-light);
+  border-radius: 10px;
+}
+.btn-filled,
+.btn-outline:hover{
+  background-color: var(--accent-color-light);
+  color: white;
+}
+
+.btn-filled:hover {
+  background-color: var(--accent-color-dark);
+}
