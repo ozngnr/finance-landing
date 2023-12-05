@@ -1,0 +1,5 @@
+<div class="custom-input-container">
+  <label class="custom-input-label" [for]="inputId">{{label}}</label>
+  <input class="custom-input" [type]="type" [id]="inputId" [name]="name" [(ngModel)]="value"
+    (input)="valueChange.emit(value)">
+</div>

@@ -1,0 +1,20 @@
+<div class="custom-dropdown__label">{{label}}</div>
+<div class="custom-dropdown" [@expandCollapse]="isDropdownOpen ? 'open' : 'closed'">
+  <div class="chevron" [@rotate]="isDropdownOpen ? 'open' : 'closed'">
+    <img src="../../../../assets/icons/chevron.svg" alt="chevron icon" />
+  </div>
+  <button type="button" class="custom-dropdown__toggle" (click)="toggleDropdown()">
+    <div class="dropdown-icon">
+      <img [src]="selectedOption.imgSrc">
+    </div>
+    {{ selectedOption ? selectedOption.name : 'Select an option' }}
+  </button>
+  <ul class="custom-dropdown__list">
+    @for (option of options; track option.id) {
+    <li class="custom-dropdown__list-item" (click)="optionClicked(option)">
+      <div class="dropdown-icon"><img [src]="option.imgSrc" alt=""></div>
+      {{ option.name }}
+    </li>
+    }
+  </ul>
+</div>

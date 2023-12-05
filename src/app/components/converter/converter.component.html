@@ -1,0 +1,33 @@
+<div class="container">
+  <section class="converter-section">
+    <div class="converter-section__title">
+      <img class="converter-section__title-icon" src="../../../assets/icons/coonvert_icon.svg"
+        alt="convert icon with dollar and euro coins" />
+      <h2>Convert Fund</h2>
+    </div>
+    <div class="converter-form">
+      <app-custom-input type="number" inputId="amount" name="amount" label="Amount"
+        [(value)]="amount"></app-custom-input>
+      <div class="dropdown-wrapper">
+        <app-custom-dropdown [options]="fromOptions" [selectedOption]="fromCurrency" (onSelect)="handleFrom($event)"
+          label="From"></app-custom-dropdown>
+        <div>
+          <img class="convert-icon" src="../../../assets/icons/exchance_icon.svg" alt="convert icon">
+        </div>
+        <app-custom-dropdown [options]="toOptions" [selectedOption]="toCurrency" (onSelect)="handleTo($event)"
+          label="To"></app-custom-dropdown>
+      </div>
+      <div class="convert-btn">
+        <app-button type="submit" buttonClasses="btn btn-filled" label="Convert" (click)="convert()"></app-button>
+      </div>
+    </div>
+    @if (convertedAmount !== 0){
+    <div class="results-wrapper">
+      <div>{{amount + " " + fromCurrency.name + "s" }} =</div>
+      <div>{{convertedAmount + " " + toCurrency.name + "s" }}</div>
+      <div>1 {{fromCurrency.value}} = {{exchangeRates[toCurrency.value] + " " + toCurrency.value}}</div>
+      <div>1 {{toCurrency.value}} = {{ 1 / exchangeRates[toCurrency.value] + " " + fromCurrency.value}}</div>
+    </div>
+    }
+  </section>
+</div>
