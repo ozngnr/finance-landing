@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "postinstall": "ng build --aot --prod",
+    "heroku-postbuild": "ng build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:finance-landing": "node dist/finance-landing/server/server.mjs"
