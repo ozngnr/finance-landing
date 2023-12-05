@@ -6,19 +6,23 @@
   cursor: pointer;
   color: var(--text-color);
   transition: color 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  border-radius: 10px;
 }
 
 .btn-text:hover {
   color: var(--accent-color-light);
 }
 
+.btn-filled, 
 .btn-outline {
   font-weight: 500;
-  padding: 0.375em 1.25em;
+  padding: 0.375em 1.5em;
   font-size: 20px;
+  width: 100%;
+}
+.btn-outline {
   color: var(--accent-color-light);
   border: 2px solid var(--accent-color-light);
-  border-radius: 10px;
 }
 .btn-filled,
 .btn-outline:hover{
