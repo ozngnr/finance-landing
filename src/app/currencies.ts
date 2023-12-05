@@ -1,9 +1,11 @@
-export const currencies: Array<{
+export interface Currencies {
   id: number;
   name: string;
   value: string;
   imgSrc: string;
-}> = [
+}
+
+export const currencies: Currencies[] = [
   {
     id: 1,
     name: 'US Dollar',
