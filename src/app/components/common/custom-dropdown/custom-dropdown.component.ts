@@ -53,7 +53,7 @@ export class CustomDropdownComponent {
   @Input() label?: string;
   @Output() onSelect: EventEmitter<any> = new EventEmitter<any>();
 
-  isDropdownOpen = false;
+  isDropdownOpen: boolean = false;
 
   toggleDropdown(): void {
     this.isDropdownOpen = !this.isDropdownOpen;

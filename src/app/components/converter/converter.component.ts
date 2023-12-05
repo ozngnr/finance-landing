@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomInputComponent } from '../common/custom-input/custom-input.component';
 import { CustomDropdownComponent } from '../common/custom-dropdown/custom-dropdown.component';
-import { currencies } from '../../currencies';
+import { Currencies, currencies } from '../../currencies';
 import { ButtonComponent } from '../common/button/button.component';
 import { CurrencyService } from '../../currency.service';
 
@@ -13,14 +13,14 @@ import { CurrencyService } from '../../currency.service';
   styleUrl: './converter.component.css',
 })
 export class ConverterComponent implements OnInit {
-  exchangeRates: any;
-  currencyOptions: any = currencies;
-  fromCurrency = this.currencyOptions[1];
-  toCurrency = this.currencyOptions[2];
-  fromOptions: any = [];
-  toOptions: any = [];
-  amount: any = 10;
-  convertedAmount?: number = 0;
+  exchangeRates?: any;
+  currencyOptions = currencies;
+  fromCurrency: Currencies = this.currencyOptions[1]; // GBP currency
+  toCurrency: Currencies = this.currencyOptions[2]; // EUR currency
+  fromOptions: Currencies[] = [];
+  toOptions: Currencies[] = [];
+  amount: number = 10;
+  convertedAmount: number = 0;
 
   constructor(private currencyService: CurrencyService) {}
 

@@ -3,6 +3,9 @@
     <div class="logo">
       <img src="../../../assets/icons/Group_3773.svg" alt="Easy Exchange Logo">
     </div>
-    <app-button [buttonClasses]="'btn btn-text'" label="LOGIN"></app-button>
+    @if (showLoginModal) {
+    <app-login (closeModalEvent)="toggleLoginModal()"></app-login>
+    }
+    <app-button [buttonClasses]="'btn btn-text'" label="LOGIN" (click)="toggleLoginModal()"></app-button>
   </header>
 </div>

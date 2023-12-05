@@ -16,15 +16,24 @@
   font-weight: 700;
 }
 :root {
-  --text-color: #354E57;
-  
-  --accent-color-light: #87C241;
-  --accent-color-dark: #63A022;
+  --slate: 53, 78, 87;
+  --light-green: 136, 194, 66;
+  --dark-green: 99, 160, 34;
+  --light-grey: 238, 243, 244;
+  --dark-grey: 133, 144, 148;
 
-  --bg-light: #EEF3F4;
-  --bg-dark: #848F93;
+  --text-color: rgb(var(--slate));
+  --accent-color-light: rgb(var(--light-green));
+  --accent-color-dark: rgb(var(--dark-green));
+  --bg-light: rgb(var(--light-grey));
+  --bg-dark: rgb(var(--dark-grey));
 
   --ff-body: 'ProximaNova', sans-serif;
+
+  --sm-font: 1rem;
+  --md-font: 1.25rem;
+  --lg-font: 1.75rem;
+  --xl-font: 3rem;
 }
 
 * {
@@ -39,6 +48,7 @@ html, body {
 
 body {
   scroll-behavior: smooth;
+  font-size: var(--sm-font);
   font-family: var(--ff-body);
   color: var(--text-color);
 }
@@ -51,12 +61,14 @@ img {
 }
 
 /* Typography */
-
-h1 {
-  font-size: 3rem;
+h1 { 
+  font-size: var(--xl-font);
 }
 h2 {
-  font-size: 1.75rem;
+  font-size: var(--lg-font);
+}
+h3 {
+  font-size: var(--md-font);
 }
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
@@ -64,4 +76,8 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: var(--text-color);
 }

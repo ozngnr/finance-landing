@@ -1,0 +1,23 @@
+<div class="login-modal" (click)="closeModal()">
+  <div class="login-modal__content-wrapper" (click)="$event.stopPropagation()" [@fadeInOut]>
+    <div class="logo">
+      <img src="../../../assets/icons/Group_3773.svg" alt="Easy Exchange Logo">
+    </div>
+    <h2 class="login-modal__title">Login Account</h2>
+    <form>
+      <div class="login-modal__input-group">
+        <app-custom-input type="email" inputId="email" name="email" placeholder="Email"
+          [(value)]="user.email"></app-custom-input>
+        <app-custom-input type="password" inputId="password" name="password" placeholder="Password"
+          [(value)]="user.password"></app-custom-input>
+      </div>
+      <div class="login-modal__links">
+        <a href="#">I don't have an account</a>
+        <a href="#">Forgot your password?</a>
+      </div>
+      <div class="login-modal__btn">
+        <app-button [buttonClasses]="'btn btn-filled'" label="LOGIN"></app-button>
+      </div>
+    </form>
+  </div>
+</div>
