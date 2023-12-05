@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run serve:ssr",
+    "build": "npm run build:ssr",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:finance-landing": "node dist/finance-landing/server/server.mjs",
-    "heroku-postbuild": "ng build — prod"
+    "heroku-postbuild": "ng build --prod"
   },
+  "engines": {"node": "20.10.0", "npm": "10.2.3"},
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.0.0",
