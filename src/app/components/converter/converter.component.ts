@@ -37,7 +37,7 @@ export class ConverterComponent implements OnInit {
         this.exchangeRates = data.rates;
       });
   }
-  handleFrom(option: any): void {
+  handleFromSelect(option: any): void {
     const newOptions = [...this.currencyOptions];
     this.fromCurrency = option;
     this.fromOptions = newOptions.filter((opt) => option.value !== opt.value);
@@ -49,7 +49,7 @@ export class ConverterComponent implements OnInit {
     this.convertedAmount = 0;
   }
 
-  handleTo(option: any): void {
+  handleToSelect(option: any): void {
     const newOptions = [...this.currencyOptions];
     this.toCurrency = option;
     this.toOptions = newOptions.filter((opt) => option.value !== opt.value);
@@ -63,7 +63,6 @@ export class ConverterComponent implements OnInit {
 
       if (toRate) {
         this.convertedAmount = this.amount * toRate;
-        console.log(this.convertedAmount);
       } else {
         console.error('Invalid currency selected');
       }

@@ -9,12 +9,12 @@
       <app-custom-input type="number" inputId="amount" name="amount" label="Amount"
         [(value)]="amount"></app-custom-input>
       <div class="dropdown-wrapper">
-        <app-custom-dropdown [options]="fromOptions" [selectedOption]="fromCurrency" (onSelect)="handleFrom($event)"
-          label="From"></app-custom-dropdown>
+        <app-custom-dropdown [options]="fromOptions" [selectedOption]="fromCurrency"
+          (onSelect)="handleFromSelect($event)" label="From"></app-custom-dropdown>
         <div>
           <img class="convert-icon" src="../../../assets/icons/exchance_icon.svg" alt="convert icon">
         </div>
-        <app-custom-dropdown [options]="toOptions" [selectedOption]="toCurrency" (onSelect)="handleTo($event)"
+        <app-custom-dropdown [options]="toOptions" [selectedOption]="toCurrency" (onSelect)="handleToSelect($event)"
           label="To"></app-custom-dropdown>
       </div>
       <div class="convert-btn">
@@ -24,7 +24,7 @@
     @if (convertedAmount !== 0){
     <div class="results-wrapper">
       <div>{{amount + " " + fromCurrency.name + "s" }} =</div>
-      <div>{{convertedAmount + " " + toCurrency.name + "s" }}</div>
+      <div>{{convertedAmount.toFixed(2) + " " + toCurrency.name + "s" }}</div>
       <div>1 {{fromCurrency.value}} = {{exchangeRates[toCurrency.value] + " " + toCurrency.value}}</div>
       <div>1 {{toCurrency.value}} = {{ 1 / exchangeRates[toCurrency.value] + " " + fromCurrency.value}}</div>
     </div>
